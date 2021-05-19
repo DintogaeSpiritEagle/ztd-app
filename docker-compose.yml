@@ -1,0 +1,46 @@
+version: "2"
+
+# Services = Containers
+services:
+
+  # Webserver
+  nginx:
+    image: nginx
+    container_name: nginx
+    volumes:
+      - ./build/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./public/css:/var/www/html/css
+      - ./public/js:/var/www/html/js
+    ports:
+      - "8080:80"
+    depends_on:
+      php:
+        condition: service_started
+
+  # Web Application
+  php:
+    build:
+      context: .
+      target: dev
+    container_name: php
+    volumes:
+      - .:/var/www/html
+    env_file:
+      - .env
+    depends_on:
+      mariadb:
+        condition: service_healthy
+
+  # Database: MySQL,NoSQL...
+  mariadb:
+    image: mariadb:10
+    container_name: mariadb
+    healthcheck:
+      test: ["CMD-SHELL", "bash", "-c", "echo > /dev/tcp/localhost/3306"]
+      interval: 1s
+    environment:
+      MYSQL_RANDOM_PASSWORD: "true"
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: root
