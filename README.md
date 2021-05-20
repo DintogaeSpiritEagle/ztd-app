@@ -1,4 +1,5 @@
 # **ZERO TO DOCKER**
+![ZTD Network Schema](public/img/ZTD.png)
 ## DISCLAIMER
 This Application is built using Free and Open Source Technologies, for Educational purposes, and is not intended for profit or malice. You are free to use the code base for your personal needs.
 
