@@ -30,6 +30,7 @@ In order to successfully run this project, please ensure that the following tool
 git clone https://github.com/DintogaeSpiritEagle/ztd-app.git ztd
 ```
 When completed. You will now have a new folder named _ztd_ which contains all the project files. Go into this directory to confirm that all the files are there.
+
 3. Copy `.env.example` to `.env`.
 ```
 cp .env.example .env
@@ -48,6 +49,7 @@ DB_PASSWORD=ztd
 * _php_ Web Application Container
 * _mariadb_ Mariadb (MYSQL) Database Container
 6. Build your docker containers and provision your new environments using the commands below, whilst in your _ztd_ directory:
+
 Note: 
 * `dockeshell` and `setup` are two commands in your `Makefile` that will build and setup the necessary dependencies for your application.
 ```
