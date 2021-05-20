@@ -103,8 +103,8 @@ CONTAINER ID   IMAGE        COMMAND                  CREATED         STATUS     
 86fde0142d39   ztd2_php     "docker-php-entrypoi…"   5 seconds ago   Up 3 seconds             9000/tcp               php
 402839fe349a   mariadb:10   "docker-entrypoint.s…"   6 seconds ago   Up 5 seconds (healthy)   3306/tcp               mariadb
 ```
-8. Go to the browser and _Register_ a new user: `[Register New User](http://localhost:8080/register)`
-9. Login with your _Newly Created User_ via: `[Login](http://localhost:8080/login)`
+8. Go to the browser and _Register_ a new user: [Register New User](http://localhost:8080/register)
+9. Login with your _Newly Created User_ via: [Login to ZTD](http://localhost:8080/login)
 10. To stop your running containers, run the following `docker` command:
 ```
 docker stop nginx php mariadb && docker rm nginx php mariadb
