@@ -10,26 +10,30 @@ RUN apt update && apt install -y nano nodejs npm
 RUN npm install n -g && n stable
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 
-FROM base AS build-fpm
+FROM base AS build-fpm-composer
 
 WORKDIR /var/www/html
 
-COPY --from=composer /usr/bin/composer /usr/bin/composer
-COPY /composer.json composer.json
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+COPY ./composer.json /var/www/html/composer.json
+RUN composer install --no-dev --no-scripts --no-autoloader
+
 COPY . /var/www/html
 RUN composer install --no-dev
 RUN composer dump-autoload -o
 
 RUN chmod 777 -R .
 
+FROM base AS build-fpm
+
+WORKDIR /var/www/html
+COPY --from=build-fpm-composer /var/www/html /var/www/html
+
+#COPY . /var/www/html
+
 #FROM build-fpm AS test
 
 #RUN make test
-
-FROM build-fpm AS fpm
-
-COPY --from=build-fpm /var/www/html /var/www/html
-COPY . /var/www/html
 
 FROM node:latest AS assets-build
 
@@ -38,7 +42,7 @@ COPY . /code
 RUN npm ci
 RUN npm run dev
 
-FROM build-nginx AS nginx
+FROM nginx AS nginx
 
 COPY ./build/nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=assets-build /code/public/ /var/www/html/
