@@ -4426,6 +4426,10 @@ select {
   background-image: linear-gradient(to top left, var(--tw-gradient-stops));
 }
 
+.bg-acsc-test {
+  background-image: url('http://7-themes.com/data_images/out/7/6790881-free-background.jpg');
+}
+
 .from-transparent {
   --tw-gradient-from: transparent;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -35767,6 +35771,10 @@ select {
     background-image: linear-gradient(to top left, var(--tw-gradient-stops));
   }
 
+  .sm\:bg-acsc-test {
+    background-image: url('http://7-themes.com/data_images/out/7/6790881-free-background.jpg');
+  }
+
   .sm\:from-transparent {
     --tw-gradient-from: transparent;
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -66936,6 +66944,10 @@ select {
 
   .md\:bg-gradient-to-tl {
     background-image: linear-gradient(to top left, var(--tw-gradient-stops));
+  }
+
+  .md\:bg-acsc-test {
+    background-image: url('http://7-themes.com/data_images/out/7/6790881-free-background.jpg');
   }
 
   .md\:from-transparent {
@@ -98109,6 +98121,10 @@ select {
     background-image: linear-gradient(to top left, var(--tw-gradient-stops));
   }
 
+  .lg\:bg-acsc-test {
+    background-image: url('http://7-themes.com/data_images/out/7/6790881-free-background.jpg');
+  }
+
   .lg\:from-transparent {
     --tw-gradient-from: transparent;
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -129280,6 +129296,10 @@ select {
     background-image: linear-gradient(to top left, var(--tw-gradient-stops));
   }
 
+  .xl\:bg-acsc-test {
+    background-image: url('http://7-themes.com/data_images/out/7/6790881-free-background.jpg');
+  }
+
   .xl\:from-transparent {
     --tw-gradient-from: transparent;
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -160449,6 +160469,10 @@ select {
 
   .\32xl\:bg-gradient-to-tl {
     background-image: linear-gradient(to top left, var(--tw-gradient-stops));
+  }
+
+  .\32xl\:bg-acsc-test {
+    background-image: url('http://7-themes.com/data_images/out/7/6790881-free-background.jpg');
   }
 
   .\32xl\:from-transparent {

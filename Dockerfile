@@ -20,9 +20,11 @@ COPY . /var/www/html
 RUN composer install --no-dev
 RUN composer dump-autoload -o
 
-FROM build-fpm AS test
+RUN chmod 777 -R .
 
-RUN make test
+#FROM build-fpm AS test
+
+#RUN make test
 
 FROM build-fpm AS fpm
 
@@ -36,7 +38,7 @@ COPY . /code
 RUN npm ci
 RUN npm run dev
 
-FROM nginx AS nginx
+FROM build-nginx AS nginx
 
-COPY ./build/nginx-prod.conf /etc/nginx/conf.d/default.conf
+COPY ./build/nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=assets-build /code/public/ /var/www/html/

@@ -13,6 +13,9 @@ module.exports = {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
+            backgroundImage: theme => ({
+                'acsc-test': "url('http://7-themes.com/data_images/out/7/6790881-free-background.jpg')"
+            })
         },
     },
 

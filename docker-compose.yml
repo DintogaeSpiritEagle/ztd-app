@@ -6,6 +6,9 @@ services:
   # Webserver
   nginx:
     image: nginx
+    #build:
+    #  context: .
+    #  target: nginx
     container_name: nginx
     volumes:
       - ./build/nginx.conf:/etc/nginx/conf.d/default.conf
