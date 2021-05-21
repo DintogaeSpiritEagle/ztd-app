@@ -18965,13 +18965,13 @@ var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
 })]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "ml-4 text-lg leading-7 font-semibold"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
-  href: "https://arkcybersecurityconsultants.com/events-repo#repo",
+  href: "https://github.com/DintogaeSpiritEagle/ztd-app",
   "class": "underline text-gray-900 dark:text-white"
-}, "Zero To Docker - Latest News")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+}, "Zero To Docker - Free Webinar")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "ml-12"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "mt-2 text-gray-600 dark:text-gray-400 text-sm"
-}, " Welcome to the Zero To Docker defaul home page, Lates News tab. ")])])])], -1
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Welcome to the Zero To Docker defaul home page. "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", null, " This is a sample Containerized Web Application, developed for the Free Webinar Series hosted by Ark Cyber Security Consultants. ")])])])])], -1
 /* HOISTED */
 );
 
