@@ -43,7 +43,10 @@ cp .env.example .env
 * _mariadb_ Mariadb (MYSQL) Database Container
 6. Build your docker containers and provision your new environments using the commands below, whilst in your _ztd_ directory:
 
+Build Steps:
 * Build the containers: `docker-compose up -d --build`
+* Install the Dependencies: `docker exec -it php composer install`
+* Clear caches: `docker exec -it php make clearcaches`
 * Run the database migrations on the web app (ie. php) container: `docker exec -it php make dbmigration`
 
 7. In your terminal, run `docker ps -a` to see the containers that you just created. Confirm that they are all running.

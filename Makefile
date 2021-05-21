@@ -19,6 +19,10 @@ dbmigration:
 	php artisan migrate
 	php artisan db:seed
 
+clearcaches:
+	php artisan cache:clear
+	php artisan config:cache
+
 test:
 	php artisan test
 
