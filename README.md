@@ -47,7 +47,19 @@ Build Steps:
 * Build the containers: `docker-compose up -d --build`
 * Install the Dependencies: `docker exec -it php composer install`
 * Clear caches: `docker exec -it php make clearcaches`
-* Run the database migrations on the web app (ie. php) container: `docker exec -it php make dbmigration`
+* Run the database migrations on the web app (ie. php) container: `docker exec -it php make dbmigration`. If containers build without errors, then proceed to step (7). If errors occur, then run the Troubleshoot steps below.
+
+*Troubleshoot Containers:*
+If the containers fail to build, then you may need to delete the docker images cache, and re-build the containers:
+```
+$ docker image prune -a                                                                                        
+WARNING! This will remove all images without at least one container associated to them.
+Are you sure you want to continue? [y/N] y
+``` 
+Then rebuild the containers:
+```
+docker-composer up -d --build
+```
 
 7. In your terminal, run `docker ps -a` to see the containers that you just created. Confirm that they are all running.
 ```
