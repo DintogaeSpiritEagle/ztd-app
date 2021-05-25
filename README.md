@@ -68,6 +68,33 @@ CONTAINER ID   IMAGE        COMMAND                  CREATED         STATUS     
 86fde0142d39   ztd2_php     "docker-php-entrypoi…"   5 seconds ago   Up 3 seconds             9000/tcp               php
 402839fe349a   mariadb:10   "docker-entrypoint.s…"   6 seconds ago   Up 5 seconds (healthy)   3306/tcp               mariadb
 ```
+*Docker Internal LAN Network:* Docker uses the `name` attribute in the `docker-compose.yml` to uniquely identify _networks_ and associate the named network to the underlying auto-generated container subnetted IP. _Note:_ By using this method, docker containers can still be able to communicate with each other, even after they are stopped and restarted, where the subnetted IP may change, but the association remains. For added _container security_, networks can be used to separate and control access to different container assets by defining differrent named network associations.
+You can use the following commands to inspect your container network:
+```
+└─$ docker network inspect ztd_app-network
+[
+    {
+        "Name": "ztd_app-network",
+        "Id": "63c045844cd67e0c44e17a4ca265f41c8abe88bd0a420435a288646d5e88e570",
+        "Created": "2021-05-25T13:13:25.883819926+10:00",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": [
+                {
+                    "Subnet": "172.18.0.0/16",
+                    "Gateway": "172.18.0.1"
+                }
+            ]
+        },
+    ...
+    ...
+    }
+]
+```
 8. Here are the links to your newly created Dockerized Web Application:
 
 * [Home Page](http://localhost:8080)
